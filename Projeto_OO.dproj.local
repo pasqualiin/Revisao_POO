@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <Transactions>
+    <Transaction>2020/09/03 13:47:29.114,=E:\Unit1.pas</Transaction>
+    <Transaction>2020/09/03 13:48:25.671,C:\Users\guilh\Desktop\Projetos\Projeto_OO\uFrmPrincipal.dfm=E:\Unit1.dfm</Transaction>
+    <Transaction>2020/09/03 13:48:25.671,C:\Users\guilh\Desktop\Projetos\Projeto_OO\uFrmPrincipal.pas=E:\Unit1.pas</Transaction>
+    <Transaction>2020/09/03 13:48:40.795,C:\Users\guilh\Desktop\Projetos\Projeto_OO\Projeto_OO.dproj=E:\Project1.dproj</Transaction>
+    <Transaction>2020/09/03 13:50:44.266,=C:\Users\guilh\Desktop\Projetos\Projeto_OO\Unit1.pas</Transaction>
+    <Transaction>2020/09/03 13:51:08.264,C:\Users\guilh\Desktop\Projetos\Projeto_OO\uPessoa.pas=C:\Users\guilh\Desktop\Projetos\Projeto_OO\Unit1.pas</Transaction>
+    <Transaction>2020/09/03 15:22:57.759,=C:\Users\guilh\Desktop\Projetos\Projeto_OO\Unit1.pas</Transaction>
+    <Transaction>2020/09/03 15:23:04.725,C:\Users\guilh\Desktop\Projetos\Projeto_OO\uCliente.pas=C:\Users\guilh\Desktop\Projetos\Projeto_OO\Unit1.pas</Transaction>
+  </Transactions>
+</BorlandProject>
