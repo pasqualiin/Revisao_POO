@@ -33,6 +33,7 @@ var
   { Declaração da variável que acessa a Classe Cliente }
 
   Cliente: TCliente;
+  Pessoa: TPessoa;
 
 implementation
 
@@ -42,8 +43,10 @@ procedure TForm1.BtnAcaoClick(Sender: TObject);
 begin
   try
     { Instancia a classe Cliente - Cria em Memória }
-
     Cliente := TCliente.Create;
+    Pessoa := TPessoa.Create;
+
+    ShowMessage(Pessoa.nome + #13 + Pessoa.dataNasc + #13 + Pessoa.sexo);
 
     { Código abaixo captura as informações digitadas pelo usuário
       e coloca dentro dos atributos da classe CLIENTE. }
@@ -52,6 +55,12 @@ begin
     Cliente.dataNasc := EdtDataNasc.Text;
     Cliente.sexo := EdtSexo.Text;
     Cliente.cpf := EdtCpf.Text;
+
+    { Chamando método abstrato }
+    ShowMessage(Cliente.MetodoAbstrato);
+
+    { Chamando Método com Inherited }
+    ShowMessage(Cliente.RetornaNome);
 
     ShowMessage(Cliente.nome + #13 + Cliente.dataNasc + #13 +
       IntToStr(Cliente.CalculaIdade) + #13 + Cliente.sexo + #13 + Cliente.cpf);

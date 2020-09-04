@@ -22,6 +22,12 @@ type
     function Receber(I: Double): String; Overload;
     function Receber(A, B: integer): String; Overload;
     function Receber(I: boolean): String; Overload;
+
+    { Declarando método Herdado da classe Pai }
+    function RetornaNome: string; override;
+
+    { Declarando método abstrato herdado da classe Pai }
+    function MetodoAbstrato: string; override;
   end;
 
 implementation
@@ -59,6 +65,18 @@ end;
 function TCliente.Receber(I: boolean): String;
 begin
   Result := 'Recebi um BOOLEANO: ' + BoolToStr(I);
+end;
+
+{ Utilizando o método da classe PAI + o que está aqui na classe FILHA }
+function TCliente.RetornaNome: string;
+begin
+  Result := inherited + 'um Cliente!';
+end;
+
+{ Implementando método abstrato da classe PAI }
+function TCliente.MetodoAbstrato: string;
+begin
+  Result := 'Eu sou um método abstrato e agora estou implementado!';
 end;
 
 end.

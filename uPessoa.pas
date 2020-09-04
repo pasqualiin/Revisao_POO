@@ -31,12 +31,21 @@ type
 
   Public
 
-    { Propriedades que acessam os campos Privados (Fields) }
+    { Criando um construtor da classe }
+    constructor Create;
 
+    { Propriedades que acessam os campos Privados (Fields) }
     property nome: string read getNome write setNome;
     property dataNasc: string read getDataNasc write setDataNasc;
     property sexo: string read getSexo write setSexo;
     function CalculaIdade: Integer;
+
+    { Exemplo declarãção método virtual - Pode ser herdado }
+    function RetornaNome: string; virtual;
+
+    { Exemplo método abstrato. É apenas declarado aqui e
+      implentado na classe FILHA }
+    function MetodoAbstrato: string; virtual; abstract;
   end;
 
 implementation
@@ -51,6 +60,13 @@ end;
 procedure TPessoa.setNome(Value: string);
 begin
   Fnome := Value;
+end;
+
+constructor TPessoa.Create;
+begin
+  nome := 'Nova Pessoa';
+  dataNasc := '01/01/1900';
+  sexo := 'Não definido';
 end;
 
 function TPessoa.getDataNasc: string;
@@ -78,6 +94,11 @@ end;
 function TPessoa.CalculaIdade: Integer;
 begin
   Result := Trunc((now - StrToDate(dataNasc)) / 365.25);
+end;
+
+function TPessoa.RetornaNome: string;
+begin
+  Result := 'Eu sou uma Pessoa e também sou ... ';
 end;
 
 end.

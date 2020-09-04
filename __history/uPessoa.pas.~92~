@@ -1,0 +1,105 @@
+unit uPessoa;
+
+interface
+
+uses System.SysUtils;
+
+type
+
+  { Declaração da Classe Pessoa }
+
+  TPessoa = class
+
+  Private
+
+    { Escopo Privado }
+
+    Fnome: string;
+    FdataNasc: string;
+    Fsexo: string;
+
+    { Métodos acessadores Get e Set para cada campo privado }
+
+    function getNome: string;
+    procedure setNome(Value: string);
+
+    function getDataNasc: string;
+    procedure setDataNasc(Value: string);
+
+    function getSexo: string;
+    procedure setSexo(Value: string);
+
+  Public
+
+    { Criando um construtor da classe }
+    constructor Create;
+    destructor Destroy;
+
+    { Propriedades que acessam os campos Privados (Fields) }
+    property nome: string read getNome write setNome;
+    property dataNasc: string read getDataNasc write setDataNasc;
+    property sexo: string read getSexo write setSexo;
+    function CalculaIdade: Integer;
+
+    { Exemplo declarãção método virtual - Pode ser herdado }
+    function RetornaNome: string; virtual;
+
+    { Exemplo método abstrato. É apenas declarado aqui e
+      implentado na classe FILHA }
+    function MetodoAbstrato: string; virtual; abstract;
+  end;
+
+implementation
+
+{ Implementação das Funções e Procedimentos (Get, Set, Cálculos) }
+
+function TPessoa.getNome: string;
+begin
+  Result := Fnome;
+end;
+
+procedure TPessoa.setNome(Value: string);
+begin
+  Fnome := Value;
+end;
+
+constructor TPessoa.Create;
+begin
+  nome := 'Nova Pessoa';
+  dataNasc := '01/01/1900';
+  sexo := 'Não definido';
+end;
+
+function TPessoa.getDataNasc: string;
+begin
+  Result := FdataNasc;
+end;
+
+procedure TPessoa.setDataNasc(Value: string);
+begin
+  FdataNasc := Value;
+end;
+
+function TPessoa.getSexo: string;
+begin
+  Result := Fsexo;
+end;
+
+procedure TPessoa.setSexo(Value: string);
+begin
+  Fsexo := Value;
+end;
+
+{ Cálculo da Idade. Pega Data Nascimento e converte em Idade atual }
+
+function TPessoa.CalculaIdade: Integer;
+begin
+  Result := Trunc((now - StrToDate(dataNasc)) / 365.25);
+end;
+
+function TPessoa.RetornaNome: string;
+begin
+  Result := 'Eu sou uma Pessoa e também sou ... ';
+end;
+
+end.
